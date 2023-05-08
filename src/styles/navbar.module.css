@@ -1,10 +1,10 @@
 .navbar{
     height: 50px;
-    border-bottom: 0.5px solid rgb(231, 228, 228);
+    border-bottom: 0.5px solid var(--navbar-border-color);
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #555;
+    color: var(--navbar-text-color);
 }
 
 .navbar .wrapper{
@@ -18,7 +18,7 @@
 .navbar .wrapper .search{
     display: flex;
     align-items: center;
-    border: 0.5px solid lightgray;
+    border: 0.5px solid var(--navbar-search--border-color);
     padding: 3px;
 }
 

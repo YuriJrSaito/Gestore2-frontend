@@ -1,5 +1,5 @@
 import styles from '@/styles/datatable.module.css'
-import { DataGrid, DataGridProps } from "@mui/x-data-grid";
+import { DataGrid, DataGridProps, gridClasses } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import Link from 'next/link';
 import { useState } from "react";
@@ -55,6 +55,11 @@ export default function Datatable(){
                         pageSize: 9,
                       },
                     },
+                }}
+                sx={{
+                    [`& .${gridClasses.row}`]:{
+                        borderColor: "white"
+                    }
                 }}
                 checkboxSelection
             />

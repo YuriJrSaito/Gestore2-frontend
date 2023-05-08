@@ -1,3 +1,11 @@
+.table{
+    background-color: var(--bg-table);
+}
+
+.table .tableCell{
+    color: var(--table-cell-text);
+}
+
 .table .cellWrapper{
     display: flex;
     align-items: center;

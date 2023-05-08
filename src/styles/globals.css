@@ -8,3 +8,65 @@
   background-color: var(--background);
 }
 
+.light{
+  --background: white;
+  --text-color: gray;
+
+  --cart-grid: rgb(228, 225, 225);
+
+  --bg-table: white;
+  --table-cell-text: black;
+
+  --navbar-text-color: #555;
+  --navbar-border-color: rgb(231, 228, 228);
+  --navbar-search--border-color: lightgray;
+
+  --sidebar-border-color: rgb(230, 227, 227);
+  --sidebar-logo: #6439ff;
+  --sidebar-hr: rgb(230, 227, 227);
+  --sidebar-li-hover: #ece8ff;
+  --sidebar-icon: #7451f8;
+
+  --datatable-datagrid: black;
+  --datatable-datagrid-border: none;
+  --datatable-buttons-view-color: darkblue;
+  --datatable-buttons-delete-color: crimson;
+  --datatable-buttons-border: none;
+  --datatable-buttons-view-border: 1px dotted rgba(0, 0, 139, 0.596);
+  --datatable-buttons-delete-border: 1px dotted rgba(220, 20, 60, 0.6);
+
+  --new-input-bg: white;
+  --widget-text-color: rgb(160, 160, 160);;
+}
+
+.dark{
+  --background: #111;
+  --text-color: rgb(156, 156, 156);
+
+  --chart-grid: rgba(228, 228, 228, 0.219);
+
+  --bg-table: #111;
+  --table-cell-text: gray;
+
+  --navbar-text-color: #999;
+  --navbar-border-color: #333;
+  --navbar-search--border-color: gray;
+
+  --sidebar-border-color: #333;
+  --sidebar-logo: #999;
+  --sidebar-hr: #333;
+  --sidebar-li-hover: #333;
+  --sidebar-icon: #999;
+
+  --datatable-datagrid: gray;
+  --datatable-datagrid-border: none;
+  --datatable-buttons-view-color: gray;
+  --datatable-buttons-delete-color: gray;
+  --datatable-buttons-border: none;
+  --datatable-buttons-view-border: none;
+  --datatable-buttons-delete-border: none;
+
+  --new-input-bg: transparent;
+
+  --widget-text-color: rgb(156, 156, 156);
+}

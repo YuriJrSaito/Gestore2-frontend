@@ -1,6 +1,6 @@
 .sidebar{
     flex: 1;
-    border-right: 0.5px solid rgb(230, 227, 227);
+    border-right: 0.5px solid var(--sidebar-border-color);
     min-height: 100vh;
     background-color: var(--background);
 }
@@ -15,12 +15,12 @@
 .sidebar .top .logo{
     font-size: 20px;
     font-weight: bold;
-    color: #6439ff;
+    color: var(--sidebar-logo);
 }
 
 .sidebar hr{
     height: 0;
-    border: 0.5px solid rgb(230, 227, 227);
+    border: 0.5px solid var(--sidebar-hr);
 }
 
 .sidebar .center{
@@ -49,12 +49,12 @@
 }
 
 .sidebar .center ul li:hover{
-    background-color: #ece8ff;
+    background-color: var(--sidebar-li-hover);
 }
 
 .sidebar .center ul li .icon{
     font-size: 18px;
-    color: #7451f8;
+    color: var(--sidebar-icon);
 }
 
 .sidebar .center ul li span{

@@ -1,5 +1,6 @@
 .datatable{
     height: 600px;
+    max-height: 80%;
     padding: 20px;
 }
 
@@ -24,6 +25,11 @@
     cursor: pointer;
 }
 
+.datatable .datagrid{
+    color: var(--datatable-datagrid);
+    border: var(--datatable-datagrid-border);
+}
+
 .cellWithImg{ 
     display: flex;
     align-items: center;
@@ -40,6 +46,8 @@
 .cellWithStatus{
     padding: 5px;
     border-radius: 5px;
+    color: var(--datatable-buttons-delete-color);
+    border: var(--datatable-buttons-border);
 }
 
 .active{
@@ -66,15 +74,15 @@
 .datatable .cellAction .viewButton{
     padding: 2px 5px;
     border-radius: 5px;
-    color: darkblue;
-    border: 1px dotted rgba(0, 0, 139, 0.596);
+    color: var(--datatable-buttons-view-color);
+    border: var(--datatable-buttons-view-border);
     cursor: pointer;
 }
 
 .datatable .cellAction .deleteButton{
     padding: 2px 5px;
     border-radius: 5px;
-    color: crimson;
-    border: 1px dotted rgba(220, 20, 60, 0.6);
+    color: var(--datatable-buttons-delete-color);
+    border: var(--datatable-buttons-delete-border);
     cursor: pointer;
 }
