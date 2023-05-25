@@ -1,26 +1,53 @@
 import styles from '@/styles/datatable.module.css'
-import { DataGrid, DataGridProps, GridPagination, gridClasses } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import Link from 'next/link';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ActionColumn as ActionColumnProps } from '@/types/actionColumnType';
 import { User as UserProps } from '@/types/userType';
+import Pagination from "@mui/material/Pagination";
+import {
+    gridPageCountSelector,
+    gridPageSelector,
+    useGridApiContext,
+    useGridSelector
+} from "@mui/x-data-grid";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import type {} from '@mui/x-data-grid/themeAugmentation';
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#ffffff'
+        },
+        secondary: {
+            main: '#000000'
+        }
+    },
+})
 
-export default function Datatable(){
+export default function Datatable() {
     const [data, setData] = useState<UserProps[]>(userRows);
+    const [color, setColor] = useState<string>("");
 
-    const handleDelete = (id : number) => {
-        setData(data.filter((item : UserProps) => item.id !== id));
+    useEffect(() => {
+        if (localStorage.getItem("theme") == "light") {
+            setColor("#000000");
+        }
+        else {
+            setColor("#ffffff");
+        }
+    }, []);
+
+    const handleDelete = (id: number) => {
+        setData(data.filter((item: UserProps) => item.id !== id));
     };
 
-    const actionColumn : ActionColumnProps[] = [
+    const actionColumn: ActionColumnProps[] = [
         {
             field: "action",
             headerName: "Action",
             width: 200,
-            renderCell: (params : any) => {
+            renderCell: (params: any) => {
                 return (
                     <div className={styles.cellAction}>
                         <Link href="/single/Single" style={{ textDecoration: "none" }}>
@@ -37,6 +64,41 @@ export default function Datatable(){
             },
         },
     ];
+
+    const CustomPagination = () => {
+
+        const apiRef = useGridApiContext();
+        const page = useGridSelector(apiRef, gridPageSelector);
+        const pageCount = useGridSelector(apiRef, gridPageCountSelector);
+
+        return (
+            <>
+                {
+                    localStorage.getItem("theme") == "dark" &&
+                    <ThemeProvider theme={theme}>
+                        <Pagination
+                            color="primary"
+                            count={pageCount}
+                            page={page + 1}
+                            onChange={(event, value) => apiRef.current.setPage(value - 1)}
+                        />
+                    </ThemeProvider>
+                }
+                {
+                    localStorage.getItem("theme") == "light" &&
+                    <ThemeProvider theme={theme}>
+                        <Pagination
+                            color="secondary"
+                            count={pageCount}
+                            page={page + 1}
+                            onChange={(event, value) => apiRef.current.setPage(value - 1)}
+                        />
+                    </ThemeProvider>
+                }
+            </>
+        );
+    }
+
     return (
         <div className={styles.datatable}>
             <div className={styles.datatableTitle}>
@@ -46,17 +108,26 @@ export default function Datatable(){
                 </Link>
             </div>
             <DataGrid
+                sx={{ button: { color: `${color}` }, '& .MuiCheckbox-root svg':{ color: `${color}` } }}
                 className={styles.datagrid}
                 rows={data}
                 columns={userColumns.concat(actionColumn)}
+                checkboxSelection
+
                 initialState={{
                     pagination: {
-                      paginationModel: {
-                        pageSize: 9,
-                      },
+                        paginationModel: {
+                            pageSize: 9,
+                        },
                     },
                 }}
-                checkboxSelection
+                
+                localeText={{
+                    footerRowSelected: CustomPagination
+                }}
+                components={{
+                    Pagination: CustomPagination,
+                }}
             />
         </div>
     );

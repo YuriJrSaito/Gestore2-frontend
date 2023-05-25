@@ -17,8 +17,8 @@ const ThemeSwitch = () => {
 
     return (
         <div className={styles.bottom}>
-            <div className={styles.colorOption} onClick={() => setTheme('light')}></div>
-            <div className={styles.colorOption} onClick={() => setTheme('dark')}></div>
+            <div className={styles.colorOption} onClick={() => {location.reload();setTheme('light')}}></div>
+            <div className={styles.colorOption} onClick={() => {location.reload();setTheme('dark')}}></div>
         </div>
     )
 }

@@ -26,20 +26,20 @@ export default function Sidebar() {
             <div className={styles.center}>
                 <ul>
                     <p className={styles.title}>MAIN</p>
-                    <Link as='/Home' href='/home/Home'>
+                    <Link href='/home/Home'>
                         <li>
                             <DashboardIcon className={styles.icon}/>
                             <span>Dashboard</span>
                         </li>
                     </Link>
                     <p className={styles.title}>LISTS</p>
-                    <Link as='/Users' href='/list/List'>
+                    <Link href='/list/List'>
                         <li>
                             <PersonOutlineIcon className={styles.icon}/>
                             <span>Users</span>
                         </li>
                     </Link>
-                    <Link as='/Products' href='/list/List'>
+                    <Link href='/list/List'>
                         <li>
                             <StoreIcon className={styles.icon}/>
                             <span>Products</span>
