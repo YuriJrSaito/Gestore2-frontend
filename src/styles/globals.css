@@ -8,7 +8,7 @@
   background-color: var(--background);
 }
 
-.light{
+[data-theme='light']{
   --background: white;
   --text-color: gray;
 
@@ -39,7 +39,7 @@
   --widget-text-color: rgb(160, 160, 160);;
 }
 
-.dark{
+[data-theme='dark']{
   --background: #111;
   --text-color: rgb(156, 156, 156);
 
