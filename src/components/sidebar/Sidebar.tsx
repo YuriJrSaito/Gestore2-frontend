@@ -18,7 +18,7 @@ export default function Sidebar() {
     return (
         <div className={styles.sidebar}>
             <div className={styles.top}>
-                <Link as='/Home' href='/home/Home'>
+                <Link href='/Home'>
                     <span className={styles.logo}>Gestore-admin</span>
                 </Link>
             </div>
@@ -26,14 +26,14 @@ export default function Sidebar() {
             <div className={styles.center}>
                 <ul>
                     <p className={styles.title}>MAIN</p>
-                    <Link href='/home/Home'>
+                    <Link href='/Home'>
                         <li>
                             <DashboardIcon className={styles.icon}/>
                             <span>Dashboard</span>
                         </li>
                     </Link>
                     <p className={styles.title}>LISTS</p>
-                    <Link href='/list/List'>
+                    <Link href='/User/List'>
                         <li>
                             <PersonOutlineIcon className={styles.icon}/>
                             <span>Users</span>

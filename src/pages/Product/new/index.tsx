@@ -1,4 +1,4 @@
-import New from "@/pages/new/New";
+import New from "@/pages/new";
 import { productInputs} from "@/formSource";
 
 export default function NewProduct()

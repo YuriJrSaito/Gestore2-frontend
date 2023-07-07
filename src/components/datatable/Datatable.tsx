@@ -25,7 +25,7 @@ const theme = createTheme({
     },
 })
 
-export default function Datatable() {
+export default function Datatable({title, origin}:{title: string, origin: string}) {
     const [data, setData] = useState<UserProps[]>(userRows);
     const [color, setColor] = useState<string>("");
 
@@ -102,8 +102,8 @@ export default function Datatable() {
     return (
         <div className={styles.datatable}>
             <div className={styles.datatableTitle}>
-                Add New User
-                <Link href="/Product/new" className={styles.link}>
+                {title}
+                <Link href={`/${origin}/New`} className={styles.link}>
                     Add New
                 </Link>
             </div>
