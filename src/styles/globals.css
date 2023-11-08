@@ -2,6 +2,7 @@
   font-family: 'Nunito', sans-serif;
   margin: 0;
   text-decoration: none;
+  padding: 0;
 }
 
 .app{
@@ -67,6 +68,5 @@
   --datatable-buttons-delete-border: none;
 
   --new-input-bg: transparent;
-
   --widget-text-color: rgb(156, 156, 156);
 }

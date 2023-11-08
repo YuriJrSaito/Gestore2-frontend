@@ -1,0 +1,129 @@
+.container{
+    width: 100%;
+}
+
+.containerLogin{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+
+.wrapLogin{
+    width: 390px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.loginFormTitle{
+    display: block;
+    font-size: 30px;
+    color: #fff;
+
+    line-height: 1.2;
+    text-align: center;
+}
+
+.loginFormTitle img{
+    width: 90px;
+}
+
+.textCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.txt1{
+    font-size: 14px;
+    color: #adadad;
+    line-height: 1.5;
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+.txt2{
+    font-size: 14px;
+    color: #6a7dfe;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.inputContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loginFormBtn{
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #111;
+    text-transform: uppercase;
+    width: 90%;
+    height: 50px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.loginFormBtn:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.inputGroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+}
+
+.inputGroup input{
+    width: 100%;
+    font: inherit;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: 2px solid #fff;
+    background-color: transparent;
+    transition: outline-color 500ms;
+}
+
+.inputGroup input:is(:focus, :valid){
+    outline-color: #3c50eb;
+}
+
+.inputGroupLabel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 10px;
+    color: #fff;
+    transition: translate 500ms, scale 500ms;
+}
+
+.inputGroup input:focus +
+.inputGroupLabel,
+.inputGroup input:valid +
+.inputGroupLabel{
+    padding-inline: 5px;
+    translate: 10px -14px;
+    scale: 0.8;
+    background-color: #333;
+}
